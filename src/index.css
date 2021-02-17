@@ -1,13 +1,30 @@
-body {
+@import-normalize;
+
+body *,
+body ::before,
+body ::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+body {
+  height: auto;
+  width: auto;
+  margin: 0;
+  background: #4e2c0b;
+  color: #ffe3c8;
+  font-size: 1em;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: #ffeac9;
+  font-size: 1em;
 }
