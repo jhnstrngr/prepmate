@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { MyContext } from "../../components/state/Context";
 
@@ -13,20 +13,36 @@ export const Timer = () => {
 
   const { items } = state;
 
-  let total: number = 0;
+  const [timerTime, setTimerTime] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
-  items.forEach((item) => (total = total + item.time));
+  useEffect(() => {
+    let total = 0;
+    items.forEach((item) => (total = item.time + total));
+    setTimerTime(total);
+  }, [items]);
+
+  const toggle = () => {};
+
+  useEffect(() => {
+    let interval: any = null;
+    if (isActive) {
+      interval = setInterval(() => {
+        setTimerTime((timerTime) => timerTime + 1);
+      }, 1000);
+    } else if (!isActive && timerTime !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isActive, timerTime]);
 
   return (
     <div className="timer-rectangle">
       <div className="time-border">
         <div className="time">
-          {pad(Math.floor(total / 60), 2)}:{pad(total % 60, 2)}
+          {pad(Math.floor(timerTime / 60), 2)}:{pad(timerTime % 60, 2)}
         </div>
       </div>
-      {/* <button
-        onClick={() => dispatch({ type: "reset", payload: initialState })}
-      ></button> */}
     </div>
   );
 };

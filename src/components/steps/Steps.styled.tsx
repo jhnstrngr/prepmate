@@ -19,6 +19,9 @@ export const AddStep = styled.div`
   background-color: #70380f;
   border-radius: 13px;
   border: 2px dashed #ffe3c8c7;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const AddStepText = styled.div`
@@ -48,6 +51,9 @@ export const StepBlock = styled.div`
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const StepBlockText = styled.div`
@@ -61,7 +67,7 @@ export const StepBlockText = styled.div`
 `;
 
 export const AddStepModal = styled.div`
-  height: 90%;
+  height: 95%;
   background-color: #ffc791;
   border-radius: 13px;
   margin-top: 2%;

@@ -3,6 +3,7 @@ export type IItem = {
   name: string;
   time: number;
   complete: boolean;
+  active?: boolean;
 };
 
 export type IItemState = {
@@ -11,8 +12,9 @@ export type IItemState = {
 
 export type IItemAction =
   | { type: "ADD_ITEM"; payload: IItem }
-  | { type: "REMOVE_ITEM"; payload: number }
-  | { type: "RESET" };
+  | { type: "REMOVE_ITEM"; payload: string }
+  | { type: "RESET" }
+  | { type: "TIMER" };
 
 export type IContextModel = {
   state: IItemState;

@@ -14,7 +14,16 @@ export const timerReducer = (
     case "ADD_ITEM":
       return { ...state, items: [...state.items, action.payload] };
     case "REMOVE_ITEM":
-      return { ...state, items: state.items.filter((item) => item.id) };
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
+    // case "TIMER":
+    //   const total = Object.values(state.items).reduce(
+    //     (t, { time }) => t + time,
+    //     0
+    //   );
+    //   return total;
     default:
       throw new Error();
   }

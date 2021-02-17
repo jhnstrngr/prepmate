@@ -36,12 +36,20 @@ const Steps = () => {
   };
 
   const handleAddStep = (payload: IItem) => {
-    if (Number.isInteger(payload.time / 60) === false) {
+    if (
+      !Number.isInteger(payload.time / 60) ||
+      payload.time === 0 ||
+      !payload.name
+    ) {
       return;
     } else {
       dispatch({ type: "ADD_ITEM", payload });
       setAddStep(false);
     }
+  };
+
+  const handleRemove = (payload: string) => {
+    dispatch({ type: "REMOVE_ITEM", payload });
   };
 
   return (
@@ -59,7 +67,7 @@ const Steps = () => {
             </AddStep>
             {state.items.map((item) => {
               return (
-                <StepBlock key={item.id}>
+                <StepBlock key={item.id} onClick={() => handleRemove(item.id)}>
                   <StepBlockText>{item.name}</StepBlockText>
                   <StepBlockText>{item.time / 60} minutes</StepBlockText>
                 </StepBlock>
@@ -69,10 +77,11 @@ const Steps = () => {
         ) : (
           <>
             <AddStepModal>
+              <AddStepModalText>Step name</AddStepModalText>
               <AddStepModalTextInput
                 type="text"
                 value={stepText}
-                placeholder="Step name"
+                placeholder="e.g. Chicken"
                 onChange={handleChange}
                 autoFocus
                 key="step-name"
@@ -82,7 +91,7 @@ const Steps = () => {
               <AddStepModalTextInput
                 type="text"
                 value={minutes}
-                placeholder="10"
+                placeholder="e.g. 10"
                 onChange={handleTimeChange}
                 key="step-time"
                 opaque

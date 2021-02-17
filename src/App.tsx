@@ -33,7 +33,7 @@ function App() {
 
           <footer>
             <div className="footer">
-              Made by <a href="http://www.google.com">John Stringer</a>
+              Made by <a href="http://www.johnstringer.me">John Stringer</a>
             </div>
           </footer>
         </div>
