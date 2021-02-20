@@ -6,7 +6,7 @@ export const defaultState: IItemState = { items: [] };
 
 export const timerReducer = (
   state: IItemState,
-  action: IItemAction
+  action: IItemAction,
 ): IItemState => {
   switch (action.type) {
     case "RESET":
