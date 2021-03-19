@@ -1,108 +1,108 @@
 .App {
-  width: auto;
-  height: auto;
+    width: auto;
+    height: auto;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 30vw 1fr;
-  grid-template-rows: 10vh auto 10vh;
-  width: 100%;
-  height: 110vh;
+    display: grid;
+    grid-template-columns: 1fr 30vw 1fr;
+    grid-template-rows: 10vh auto 10vh;
+    width: 100%;
+    height: 110vh;
 }
 
 @media only screen and (max-width: 600px) {
-  .wrapper {
-    grid-template-columns: 4vw auto 4vw;
-  }
+    .wrapper {
+        grid-template-columns: 4vw auto 4vw;
+    }
 }
 
 .wrapper > * {
-  grid-column: 2;
+    grid-column: 2;
 }
 
 .time-border {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .time {
-  font-size: 6em;
-  font-weight: bold;
+    font-size: 6em;
+    font-weight: bold;
 }
 
 .logo {
-  display: flex;
-  justify-content: left;
+    display: flex;
+    justify-content: left;
 }
 
 .timer-rectangle {
-  border-radius: 17px;
-  background: #70380f;
-  height: 35%;
-  width: 100%;
-  display: flex;
+    border-radius: 17px;
+    background: #70380f;
+    height: 35%;
+    width: 100%;
+    display: flex;
 }
 
 h1 {
-  color: #ffe3c8;
-  font-size: 24px;
+    color: #ffe3c8;
+    font-size: 24px;
 }
 
 *:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
+    outline: none;
 }
 
 input {
-  border: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  cursor: text;
-  writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  text-transform: none;
-  appearance: textfield;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: text;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    text-transform: none;
+    appearance: textfield;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
 }
 
 header,
 main,
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
-  display: block;
+    display: block;
 }
 
 header,
 main,
 footer {
-  grid-column: 1 / 4;
+    grid-column: 1 / 4;
 }
 
 header {
-  height: 10vh;
-  justify-content: left;
+    height: 10vh;
+    justify-content: left;
 }
 
 main {
-  height: 80vh;
-  align-items: flex-start;
+    height: 85vh;
+    align-items: flex-start;
 }
 
 footer {
-  height: 10vh;
+    height: 10vh;
 }
