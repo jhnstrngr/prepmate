@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-// interface IButton {
-//   children: any;
-//   inverted?: boolean;
-// }
-
 const handleWidthSizeTypes = (size?: string) => {
   switch (size) {
     case "small":
@@ -58,6 +53,9 @@ export const Button = styled.button<{ inverted?: boolean; size?: string }>`
   border-style: none;
   border-radius: 14px;
   font-weight: 500;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 // export const Button = ({ children, inverted }: IButton) => {
