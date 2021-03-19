@@ -18,7 +18,11 @@ import {
     AddStepModalButtonBorder,
 } from './Steps.styled';
 
-const Steps = () => {
+interface StepsProps {
+    timeT: number;
+}
+
+const Steps = ({ timeT }: StepsProps) => {
     const { dispatch, state } = useContext(MyContext);
     const [addStep, setAddStep] = useState(false);
     const [stepText, setStepText] = useState('');
@@ -49,6 +53,14 @@ const Steps = () => {
         dispatch({ type: 'REMOVE_ITEM', payload });
     };
 
+    const handleSelected = (time: number) => {
+        if (timeT <= time) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     return (
         <StepsDiv>
             <StepsTitle>Steps</StepsTitle>
@@ -65,6 +77,7 @@ const Steps = () => {
                         {state.items.map((item) => {
                             return (
                                 <StepBlock
+                                    selected={handleSelected(item.time)}
                                     key={item.id}
                                     onClick={() => handleRemove(item.id)}
                                 >
