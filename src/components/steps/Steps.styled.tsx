@@ -10,7 +10,7 @@ export const StepsTitle = styled.div`
 `;
 
 export const StepsList = styled.div`
-    overflow: auto;
+    /* overflow: auto; */
     height: 100%;
 `;
 
@@ -70,7 +70,7 @@ export const StepBlockText = styled.div`
 `;
 
 export const AddStepModal = styled.div`
-    height: 95%;
+    height: 100%;
     background-color: #ffc791;
     border-radius: 13px;
     margin-top: 2%;
