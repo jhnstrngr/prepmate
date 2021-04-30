@@ -18,7 +18,12 @@ export const Timer = () => {
     const [timerTime, setTimerTime] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const toggle = () => {
-        setIsActive(!isActive);
+        if (timerTime === 0) {
+            // Show toast saying add an item
+            return;
+        } else {
+            setIsActive(!isActive);
+        }
     };
 
     useEffect(() => {
