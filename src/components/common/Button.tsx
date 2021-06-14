@@ -3,43 +3,48 @@ import styled from 'styled-components';
 const handleWidthSizeTypes = (size?: string) => {
     switch (size) {
         case 'small':
-            return '5.5em';
+            return '90px';
         case 'medium':
-            return '30%';
+            return '125px';
         case 'large':
-            return '40%';
+            return '160px';
         default:
-            return '30%';
+            return '125px';
     }
 };
 
 const handleHeightSizeTypes = (size?: string) => {
     switch (size) {
         case 'small':
-            return '2.5em';
+            return '40px';
         case 'medium':
-            return '50%';
+            return '60px';
         case 'large':
-            return '60%';
+            return '75px';
         default:
-            return '50%';
+            return '60px';
     }
 };
 
 const handleFontSizeTypes = (size?: string) => {
     switch (size) {
         case 'small':
-            return '1.2em';
+            return '1.2rem';
         case 'medium':
-            return '1.5em';
+            return '1.5rem';
         case 'large':
-            return '1.7em';
+            return '1.7rem';
         default:
-            return '1.5em';
+            return '1.5rem';
     }
 };
 
-export const Button = styled.button<{ inverted?: boolean; size?: string }>`
+export interface ButtonProps {
+    inverted?: boolean; 
+    size?: string
+}
+
+export const Button = styled.button<ButtonProps>`
     width: ${({ size }) => handleWidthSizeTypes(size)};
     height: ${({ size }) => handleHeightSizeTypes(size)};
     font-size: ${({ size }) => handleFontSizeTypes(size)};
@@ -57,9 +62,5 @@ export const Button = styled.button<{ inverted?: boolean; size?: string }>`
         cursor: pointer;
     }
 `;
-
-// export const Button = ({ children, inverted }: IButton) => {
-//   return <StartButton inverted={inverted}>{children}</StartButton>;
-// };
 
 export default Button;
